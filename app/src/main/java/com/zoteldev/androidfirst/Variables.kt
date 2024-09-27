@@ -39,7 +39,10 @@ val charExample3:Char = '!';
 
 // String
 
-val stringExample:String = "Primeros pasos en android";
+    val stringExample:String = "Primeros pasos en android";
+    val stringExample2 = "Crisssss";
+    val stringExample3 = "4";
+    val stringExample4 = "28";
 
 /*
 * Variables booleanas*/
@@ -52,10 +55,25 @@ val booleanExample3:Boolean = true;
 
 
 
-    print("Buenas estos son mis"+ " " + stringExample);
+    println("Buenas estos son mis"+ " " + stringExample);
 
     //val name = "Cristian";
     //print("Hola me llamo" + " " + name);
+
+    /* Para sumar dos string antes debemos pasarlos a enteros
+    * pero si no agrego el metodo .toInt() solo imprimira los string sin sumarlos, es decir los concatena*/
+
+    println(stringExample3.toInt() + stringExample4.toInt())
+
+    var stringConcatenada:String = "hola";
+    println(stringConcatenada)
+    stringConcatenada = "Hola me llamo $stringExample2 y tengo $age años"
+    println(stringConcatenada)
+
+    // Pasamos de Int a String con el metodo .toString
+    val exampleEdad:String = age.toString();
+    println("Pasamos un entero a string con el dato de age: $exampleEdad")
+
 
 
 }
