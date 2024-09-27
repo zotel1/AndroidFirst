@@ -3,27 +3,53 @@ package com.zoteldev.androidfirst
 /*diferencias entre valores y variables,
 las val serian como constantes y las var como variables*/
 
-fun main() {
+// val de la clase o variable global
+val age:Int = 30;
+var age2:Int = 7;
 
-/***
- * Variables Númericas
- * */
+fun variablesNumericas() {
+    /***
+     * Variables Númericas
+     * */
 
 // Int -2,123,456,788 a 2,123,456,788
-val age:Int = 28;
-var age1:Int = 29;
-println(age1)
-age1 = 25;
-println(age1)
+
+
+    println(age2)
+    age2 = 29;
+    println(age2)
 
 // Long  -9,223,372,036,854,775,807 a 9,223,372,036,854,775,807
-val example:Long = 28;
+    val example:Long = 28;
 
 // Float
-val floatExample:Float = 30.5f
+    val floatExample:Float = 30.5f
 
 // Double
-val doubleExample:Double = 3241.3123123
+    val doubleExample:Double = 3241.3123123
+
+    println("Sumar: " + age + age2)
+
+   // println("Restar: ")
+   // println(age - age2)
+
+    // Las operaciones de resta deben estar dentro de un parentesis por jemplo si queremos agregarle un println de un string
+    println("Restar: " + (age - age2))
+
+    println("Multiplicar: " + age*age2)
+
+    println("Division: " + age/age2)
+
+    println("Módulo: " + age % age2)
+
+    var exampleSuma = age + floatExample
+
+}
+
+fun main() {
+
+    variablesNumericas();
+
 
 /**
  * Variables Alfanuméricas*/
@@ -73,7 +99,6 @@ val booleanExample3:Boolean = true;
     // Pasamos de Int a String con el metodo .toString
     val exampleEdad:String = age.toString();
     println("Pasamos un entero a string con el dato de age: $exampleEdad")
-
-
-
 }
+
+
