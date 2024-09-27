@@ -4,8 +4,8 @@ package com.zoteldev.androidfirst
 las val serian como constantes y las var como variables*/
 
 // val de la clase o variable global
-val age:Int = 30;
-var age2:Int = 7;
+val age: Int = 30;
+var age2: Int = 7;
 val stringExample2 = "Crisssss";
 
 fun variablesAlfaNumericas() {
@@ -16,20 +16,20 @@ fun variablesAlfaNumericas() {
 
 // Char
 
-    val charExample1:Char = 'e';
+    val charExample1: Char = 'e';
 
-    val charExample2:Char = '1';
+    val charExample2: Char = '1';
 
-    val charExample3:Char = '!';
+    val charExample3: Char = '!';
 
 // String
 
-    val stringExample:String = "Primeros pasos en android";
+    val stringExample: String = "Primeros pasos en android";
 
     val stringExample3 = "4";
     val stringExample4 = "28";
 
-    println("Buenas estos son mis"+ " " + stringExample);
+    println("Buenas estos son mis" + " " + stringExample);
 
     //val name = "Cristian";
     //print("Hola me llamo" + " " + name);
@@ -44,11 +44,11 @@ fun variablesBoolean() {
     /*
 * Variables booleanas*/
 
-    val booleanExample1:Boolean = true;
+    val booleanExample1: Boolean = true;
 
-    val booleanExample2:Boolean = false;
+    val booleanExample2: Boolean = false;
 
-    val booleanExample3:Boolean = true;
+    val booleanExample3: Boolean = true;
 }
 
 fun variablesNumericas() {
@@ -64,25 +64,25 @@ fun variablesNumericas() {
     println(age2)
 
 // Long  -9,223,372,036,854,775,807 a 9,223,372,036,854,775,807
-    val example:Long = 28;
+    val example: Long = 28;
 
 // Float
-    val floatExample:Float = 30.5f
+    val floatExample: Float = 30.5f
 
 // Double
-    val doubleExample:Double = 3241.3123123
+    val doubleExample: Double = 3241.3123123
 
     println("Sumar: " + age + age2)
 
-   // println("Restar: ")
-   // println(age - age2)
+    // println("Restar: ")
+    // println(age - age2)
 
     // Las operaciones de resta deben estar dentro de un parentesis por jemplo si queremos agregarle un println de un string
     println("Restar: " + (age - age2))
 
-    println("Multiplicar: " + age*age2)
+    println("Multiplicar: " + age * age2)
 
-    println("Division: " + age/age2)
+    println("Division: " + age / age2)
 
     println("Módulo: " + age % age2)
 
@@ -90,21 +90,61 @@ fun variablesNumericas() {
 }
 
 fun variablesConString() {
-    var stringConcatenada:String = "hola";
+    var stringConcatenada: String = "hola";
     println(stringConcatenada)
     stringConcatenada = "Hola me llamo $stringExample2 y tengo $age años"
     println(stringConcatenada)
 
     // Pasamos de Int a String con el metodo .toString
-    val exampleEdad:String = age.toString();
+    val exampleEdad: String = age.toString();
     println("Pasamos un entero a string con el dato de age: $exampleEdad")
 }
 
+// Funciones basicas
+fun showMyName() {
+    println("Me llamo CristianDev")
+}
+
+fun showMyAge() {
+    println("Tengo 28 años");
+}
+
+// Funciones con parametros, esta se puede instanciar con signo dolar
+fun showMyAgeVar(currentAge: Int = 30) {
+    println("Tengo $currentAge años");
+}
+
+fun add(firstNumber: Int, secondNumber: Int) {
+    println(firstNumber + secondNumber)
+}
+
+fun showMyNameVar(name:String) {
+    println("Me llamo $name")
+}
+
+fun substract(firstNumber: Int, secondNumber: Int):Int {
+    return firstNumber - secondNumber
+}
+
+// Sirve para funciones sin logica
+fun substractCool(firstNumber: Int, secondNumber: Int):Int = firstNumber - secondNumber
+
+
 fun main() {
-    variablesNumericas();
-    variablesBoolean();
-    variablesAlfaNumericas();
-    variablesConString();
+    //variablesNumericas();
+    // variablesBoolean();
+    //  variablesAlfaNumericas();
+    //variablesConString();
+    showMyName();
+    showMyAge();
+    // y se puede agregar el valor de la funcion en el main
+    showMyAgeVar(30)
+    add(25, 33)
+    showMyNameVar("CristianDev con el ejemplo showMyNameVar")
+    val mySubstract = substract(10, 7)
+    println(mySubstract)
+    substractCool(33, 22)
+
 }
 
 
