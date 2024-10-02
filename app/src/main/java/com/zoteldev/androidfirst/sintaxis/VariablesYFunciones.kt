@@ -1,4 +1,4 @@
-package com.zoteldev.androidfirst
+package com.zoteldev.androidfirst.sintaxis
 
 /*diferencias entre valores y variables,
 las val serian como constantes y las var como variables*/

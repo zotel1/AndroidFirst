@@ -1,4 +1,4 @@
-package com.zoteldev.androidfirst
+package com.zoteldev.androidfirst.sintaxis
 
 fun main() {
     inmutableList()

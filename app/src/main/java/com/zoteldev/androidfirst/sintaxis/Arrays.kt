@@ -1,4 +1,4 @@
-package com.zoteldev.androidfirst
+package com.zoteldev.androidfirst.sintaxis
 
 // Estructura de datos que nos permite almacenar varias variables seguidas.
 fun main() {

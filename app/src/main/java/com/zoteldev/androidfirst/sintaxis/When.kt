@@ -1,4 +1,4 @@
-package com.zoteldev.androidfirst
+package com.zoteldev.androidfirst.sintaxis
 
 // Donde ya tengamos mas de 3 if- if else es recomendable usar el when
 

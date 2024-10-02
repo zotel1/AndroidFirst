@@ -1,4 +1,4 @@
-package com.zoteldev.androidfirst
+package com.zoteldev.androidfirst.sintaxis
 
 
 // Con el simbolo de interrogacion no se rompe con los null
