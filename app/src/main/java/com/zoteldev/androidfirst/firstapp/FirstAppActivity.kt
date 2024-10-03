@@ -18,7 +18,13 @@ class FirstAppActivity : AppCompatActivity() {
 
 
         btnStart.setOnClickListener {
-            Log.i("ZotelDev", "Button Pulsado ${etName.text.toString()}")
+            val name = etName.text.toString()
+
+            if (name.isNotEmpty()){
+            Log.i("ZotelDev", "Button Pulsado $name")
+            }
         }
-        }
+
     }
+
+}
