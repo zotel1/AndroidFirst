@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatEditText
 import com.zoteldev.androidfirst.R
 
 class FirstAppActivity : AppCompatActivity() {
@@ -13,8 +14,11 @@ class FirstAppActivity : AppCompatActivity() {
        // enableEdgeToEdge()
         setContentView(R.layout.activity_first_app)
         val btnStart = findViewById<AppCompatButton>(R.id.btnStart)
+        val etName = findViewById<AppCompatEditText>(R.id.etName)
+
+
         btnStart.setOnClickListener {
-            Log.i("ZotelDev", "Button Pulsado")
+            Log.i("ZotelDev", "Button Pulsado ${etName.text.toString()}")
         }
         }
     }
