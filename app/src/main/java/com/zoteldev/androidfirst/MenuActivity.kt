@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.zoteldev.androidfirst.firstapp.FirstAppActivity
+import com.zoteldev.androidfirst.imccalculator.ImcCalculatorActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,8 @@ class MenuActivity : AppCompatActivity() {
         btnImcApp.setOnClickListener { navigateToImcApp() }
     }
     private fun navigateToImcApp() {
-
+        val intent = Intent(this, ImcCalculatorActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToSaludApp() {
