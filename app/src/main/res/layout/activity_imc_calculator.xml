@@ -54,6 +54,31 @@
         app:layout_constraintStart_toEndOf="@+id/viewMale"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:src="@drawable/ic_female"
+                android:tint="@color/white"
+                android:layout_height="60dp">
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="MUJER"
+                android:textAllCaps="true"
+                android:textColor="@color/title_text"
+                >
+
+            </TextView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
