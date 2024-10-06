@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="HOMBRE"
+                android:text="@string/male"
                 android:textAllCaps="true"
                 android:textColor="@color/title_text" />
 
@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="MUJER"
+                android:text="@string/female"
                 android:textAllCaps="true"
                 android:textColor="@color/title_text"
                 >
