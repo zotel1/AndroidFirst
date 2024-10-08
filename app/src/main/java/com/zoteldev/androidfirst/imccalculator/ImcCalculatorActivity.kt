@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.zoteldev.androidfirst.R
@@ -24,6 +25,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_imc_calculator)
         initComponents()
         initListeners()
+        initUI()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -38,12 +40,40 @@ class ImcCalculatorActivity : AppCompatActivity() {
     }
 
     private fun initListeners() {
-        viewMale.setOnClickListener { setGenderColor(isMaleSelected) }
-        viewFemale.setOnClickListener { setGenderColor(isFemaleSelected) }
+        viewMale.setOnClickListener {
+            changeGender()
+            setGenderColor()
+        }
+        viewFemale.setOnClickListener {
+            changeGender()
+            setGenderColor()
+        }
     }
 
-    private fun setGenderColor(isViewSelected:Boolean) {
+    private fun changeGender() {
+        isMaleSelected = !isMaleSelected
+        isFemaleSelected = !isFemaleSelected
+    }
 
-        viewMale.setCardBackgroundColor()
+    private fun setGenderColor() {
+
+        viewMale.setCardBackgroundColor(getBackgroundColor(isMaleSelected))
+        viewFemale.setCardBackgroundColor(getBackgroundColor(isFemaleSelected))
+
+    }
+
+    private fun getBackgroundColor(isSelectedComponent:Boolean): Int {
+
+        val colorReference = if(isSelectedComponent) {
+            R.color.background_component_selected
+        } else {
+            R.color.background_component
+        }
+
+        return ContextCompat.getColor(this, colorReference)
+    }
+
+    private fun initUI() {
+        setGenderColor()
     }
 }
