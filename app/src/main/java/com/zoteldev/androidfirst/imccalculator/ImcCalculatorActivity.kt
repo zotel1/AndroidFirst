@@ -1,12 +1,15 @@
 package com.zoteldev.androidfirst.imccalculator
 
+import android.icu.text.DecimalFormat
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.slider.RangeSlider
 import com.zoteldev.androidfirst.R
 
 class ImcCalculatorActivity : AppCompatActivity() {
@@ -14,6 +17,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var viewMale: CardView
 
     private lateinit var viewFemale: CardView
+
+    private lateinit var tvHeight:TextView
+
+    private lateinit var rsHeight:RangeSlider
 
     private var isMaleSelected: Boolean = true
 
@@ -37,6 +44,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private fun initComponents() {
         viewMale = findViewById(R.id.viewMale)
         viewFemale = findViewById(R.id.viewFemale)
+        tvHeight = findViewById(R.id.tvHeight)
+        rsHeight = findViewById(R.id.rsHeight)
     }
 
     private fun initListeners() {
@@ -47,6 +56,12 @@ class ImcCalculatorActivity : AppCompatActivity() {
         viewFemale.setOnClickListener {
             changeGender()
             setGenderColor()
+        }
+
+        rsHeight.addOnChangeListener { _, value, _ ->
+            val df = DecimalFormat("#.##")
+            val result = df.format(value)
+            tvHeight.text = "$result cm"
         }
     }
 
