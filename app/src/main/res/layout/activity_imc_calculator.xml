@@ -123,6 +123,16 @@
                 >
 
             </TextView>
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rsHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:valueFrom="120"
+                android:valueTo="200"
+                >
+
+            </com.google.android.material.slider.RangeSlider>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
