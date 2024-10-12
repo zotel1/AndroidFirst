@@ -1,5 +1,6 @@
 package com.zoteldev.androidfirst.imccalculator
 
+import android.health.connect.datatypes.WeightRecord
 import android.icu.text.DecimalFormat
 import android.os.Bundle
 import android.widget.TextView
@@ -9,6 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 import com.zoteldev.androidfirst.R
 
@@ -18,9 +20,17 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private lateinit var viewFemale: CardView
 
-    private lateinit var tvHeight:TextView
+    private var currentWeight: Int = 50
 
-    private lateinit var rsHeight:RangeSlider
+    private lateinit var tvHeight: TextView
+
+    private lateinit var rsHeight: RangeSlider
+
+    private lateinit var tvWeight: TextView
+
+    private lateinit var btnSubtractWeight: FloatingActionButton
+
+    private lateinit var btnPlusWeight: FloatingActionButton
 
     private var isMaleSelected: Boolean = true
 
@@ -46,6 +56,9 @@ class ImcCalculatorActivity : AppCompatActivity() {
         viewFemale = findViewById(R.id.viewFemale)
         tvHeight = findViewById(R.id.tvHeight)
         rsHeight = findViewById(R.id.rsHeight)
+        btnSubtractWeight = findViewById(R.id.btnSubtractWeight)
+        btnPlusWeight = findViewById(R.id.btnPlusWeight)
+        tvWeight = findViewById(R.id.tvWeight)
     }
 
     private fun initListeners() {
@@ -63,6 +76,19 @@ class ImcCalculatorActivity : AppCompatActivity() {
             val result = df.format(value)
             tvHeight.text = "$result cm"
         }
+
+        btnPlusWeight.setOnClickListener {
+            currentWeight += 1
+            setWeight()
+        }
+        btnSubtractWeight.setOnClickListener {
+            currentWeight =  currentWeight - 1
+            setWeight()
+        }
+    }
+
+    private fun setWeight() {
+        tvWeight.text = currentWeight.toString()
     }
 
     private fun changeGender() {
@@ -77,9 +103,9 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     }
 
-    private fun getBackgroundColor(isSelectedComponent:Boolean): Int {
+    private fun getBackgroundColor(isSelectedComponent: Boolean): Int {
 
-        val colorReference = if(isSelectedComponent) {
+        val colorReference = if (isSelectedComponent) {
             R.color.background_component_selected
         } else {
             R.color.background_component
@@ -90,5 +116,6 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private fun initUI() {
         setGenderColor()
+        setWeight()
     }
 }
