@@ -54,6 +54,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private var isFemaleSelected: Boolean = true
 
+    companion object {
+        const val IMC_KEY
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
