@@ -22,7 +22,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private var currentWeight: Int = 50
 
-    private var currentAge: Int = 1
+    private var currentAge: Int = 30
 
     private lateinit var tvHeight: TextView
 
@@ -103,7 +103,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         }
 
         btnSubtractAge.setOnClickListener {
-            currentAge =- 1
+            currentAge = currentAge - 1
             setAge()
         }
     }
@@ -142,5 +142,6 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private fun initUI() {
         setGenderColor()
         setWeight()
+        setAge()
     }
 }
