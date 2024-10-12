@@ -22,15 +22,23 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private var currentWeight: Int = 50
 
+    private var currentAge: Int = 1
+
     private lateinit var tvHeight: TextView
 
     private lateinit var rsHeight: RangeSlider
 
     private lateinit var tvWeight: TextView
 
+    private lateinit var tvAge: TextView
+
     private lateinit var btnSubtractWeight: FloatingActionButton
 
     private lateinit var btnPlusWeight: FloatingActionButton
+
+    private lateinit var btnSubtractAge: FloatingActionButton
+
+    private lateinit var btnPlusAge: FloatingActionButton
 
     private var isMaleSelected: Boolean = true
 
@@ -59,6 +67,9 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnSubtractWeight = findViewById(R.id.btnSubtractWeight)
         btnPlusWeight = findViewById(R.id.btnPlusWeight)
         tvWeight = findViewById(R.id.tvWeight)
+        btnSubtractAge = findViewById(R.id.btnSubtractAge)
+        btnPlusAge = findViewById(R.id.btnPlusAge)
+        tvAge = findViewById(R.id.tvAge)
     }
 
     private fun initListeners() {
@@ -82,13 +93,27 @@ class ImcCalculatorActivity : AppCompatActivity() {
             setWeight()
         }
         btnSubtractWeight.setOnClickListener {
-            currentWeight =  currentWeight - 1
+            currentWeight = currentWeight - 1
             setWeight()
+        }
+
+        btnPlusAge.setOnClickListener {
+            currentAge = currentAge + 1
+            setAge()
+        }
+
+        btnSubtractAge.setOnClickListener {
+            currentAge =- 1
+            setAge()
         }
     }
 
     private fun setWeight() {
         tvWeight.text = currentWeight.toString()
+    }
+
+    private fun setAge() {
+        tvAge.text = currentAge.toString()
     }
 
     private fun changeGender() {
