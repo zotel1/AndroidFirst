@@ -1,5 +1,6 @@
 package com.zoteldev.androidfirst.imccalculator
 
+import android.content.Intent
 import android.health.connect.datatypes.WeightRecord
 import android.icu.text.DecimalFormat
 import android.os.Build
@@ -17,6 +18,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 import com.zoteldev.androidfirst.R
+import com.zoteldev.androidfirst.sintaxis.result
 
 class ImcCalculatorActivity : AppCompatActivity() {
 
@@ -118,16 +120,23 @@ class ImcCalculatorActivity : AppCompatActivity() {
         }
 
         btnCalculate.setOnClickListener {
-            calculateIMC()
+            val result = calculateIMC()
+            navigateToResult(result)
         }
     }
 
+    private fun navigateToResult(result: Double) {
+        val intent = Intent(this, ResultIMCActivity::class.java)
+        intent.putExtra("IMC_RESULT", result)
+        startActivity(intent)
+    }
+
     @RequiresApi(Build.VERSION_CODES.N)
-    private fun calculateIMC() {
+    private fun calculateIMC(): Double {
         val df = DecimalFormat("#.##")
         val imc = currentWeight /(currentHeight.toDouble() / 100 * currentHeight.toDouble() / 100)
-        val result = df.format(imc).toDouble()
-        Log.i("cristutorial", "el imc es $result")
+        return df.format(imc).toDouble()
+        //Log.i("cristutorial", "el imc es $result")
     }
 
     private fun setWeight() {
