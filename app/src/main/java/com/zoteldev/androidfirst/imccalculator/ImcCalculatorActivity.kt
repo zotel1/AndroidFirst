@@ -2,9 +2,13 @@ package com.zoteldev.androidfirst.imccalculator
 
 import android.health.connect.datatypes.WeightRecord
 import android.icu.text.DecimalFormat
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -20,7 +24,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private lateinit var viewFemale: CardView
 
-    private var currentWeight: Int = 50
+    private var currentWeight: Int = 70
 
     private var currentAge: Int = 30
 
@@ -39,6 +43,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var btnSubtractAge: FloatingActionButton
 
     private lateinit var btnPlusAge: FloatingActionButton
+
+    private lateinit var btnCalculate: Button
+
+    private var currentHeight: Int = 120
 
     private var isMaleSelected: Boolean = true
 
@@ -70,8 +78,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnSubtractAge = findViewById(R.id.btnSubtractAge)
         btnPlusAge = findViewById(R.id.btnPlusAge)
         tvAge = findViewById(R.id.tvAge)
+        btnCalculate = findViewById(R.id.btnCalculate)
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun initListeners() {
         viewMale.setOnClickListener {
             changeGender()
@@ -84,8 +94,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
         rsHeight.addOnChangeListener { _, value, _ ->
             val df = DecimalFormat("#.##")
-            val result = df.format(value)
-            tvHeight.text = "$result cm"
+            currentHeight = df.format(value).toInt()
+            tvHeight.text = "$currentHeight cm"
         }
 
         btnPlusWeight.setOnClickListener {
@@ -106,6 +116,18 @@ class ImcCalculatorActivity : AppCompatActivity() {
             currentAge = currentAge - 1
             setAge()
         }
+
+        btnCalculate.setOnClickListener {
+            calculateIMC()
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun calculateIMC() {
+        val df = DecimalFormat("#.##")
+        val imc = currentWeight /(currentHeight.toDouble() / 100 * currentHeight.toDouble() / 100)
+        val result = df.format(imc).toDouble()
+        Log.i("cristutorial", "el imc es $result")
     }
 
     private fun setWeight() {
