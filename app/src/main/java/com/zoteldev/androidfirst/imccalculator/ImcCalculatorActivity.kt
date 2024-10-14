@@ -55,9 +55,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private var isFemaleSelected: Boolean = true
 
     companion object {
-        const val IMC_KEY
+        const val IMC_KEY = "IMC_RESULT"
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -131,7 +132,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private fun navigateToResult(result: Double) {
         val intent = Intent(this, ResultIMCActivity::class.java)
-        intent.putExtra("IMC_RESULT", result)
+        intent.putExtra(IMC_KEY, result)
         startActivity(intent)
     }
 

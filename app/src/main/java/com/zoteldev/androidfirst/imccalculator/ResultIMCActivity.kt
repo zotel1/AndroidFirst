@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.zoteldev.androidfirst.R
+import com.zoteldev.androidfirst.imccalculator.ImcCalculatorActivity.Companion.IMC_KEY
 
 class ResultIMCActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +19,6 @@ class ResultIMCActivity : AppCompatActivity() {
             insets
         }
 
-        val result =
+        val result:Double = intent.extras?.getDouble(IMC_KEY) ?: -1.0
     }
 }
