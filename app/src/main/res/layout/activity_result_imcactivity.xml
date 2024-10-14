@@ -7,4 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".imccalculator.ResultIMCActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/result"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
