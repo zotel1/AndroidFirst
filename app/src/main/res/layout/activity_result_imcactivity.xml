@@ -62,7 +62,6 @@
                 android:layout_height="wrap_content"
                 android:textSize="26sp"
                 android:textColor="@color/white"
-                android:textStyle="bold"
                 tools:text="IMC"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
