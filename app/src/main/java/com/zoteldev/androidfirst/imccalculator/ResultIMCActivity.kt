@@ -28,6 +28,7 @@ class ResultIMCActivity : AppCompatActivity() {
         val result:Double = intent.extras?.getDouble(IMC_KEY) ?: -1.0
 
         initComponents()
+        initUI(result)
 
     }
 
@@ -35,6 +36,36 @@ class ResultIMCActivity : AppCompatActivity() {
         tvResult = findViewById(R.id.tvResult)
         tvIMC = findViewById(R.id.tvIMC)
         tvDescription = findViewById(R.id.tvDescription)
+    }
+
+    private fun initUI(result:Double) {
+
+        tvIMC.text = result.toString()
+
+        when(result) {
+            in 0.00..18.50 -> { // Bajo peso
+                tvResult.text
+                tvDescription.text
+            }
+            in 18.51..24.99 -> { // Peso normal
+                tvResult.text
+                tvDescription.text
+            }
+            in 25.00..29.99 -> { // Sobrepeso
+                tvResult.text
+                tvDescription.text
+            }
+            in 30.00..99.00 -> { // Obesidad
+                tvResult.text
+                tvDescription
+            }
+            else -> { // Error
+                tvResult.text = getString(R.string.error)
+                tvIMC.text = getString(R.string.error)
+                tvDescription.text = getString(R.string.error)
+
+             }
+        }
     }
 
 }
