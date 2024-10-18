@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.zoteldev.androidfirst.firstapp.FirstAppActivity
 import com.zoteldev.androidfirst.imccalculator.ImcCalculatorActivity
+import com.zoteldev.androidfirst.todoapp.TodoActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +34,8 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun navigateToTODOApp() {
-
+        val intent = Intent(this, TodoActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToImcApp() {
