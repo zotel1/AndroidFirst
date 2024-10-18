@@ -24,9 +24,18 @@ class MenuActivity : AppCompatActivity() {
         }
         val btnSaludApp = findViewById<Button>(R.id.btnSaludApp)
         val btnImcApp = findViewById<Button>(R.id.btnIMCApp)
+        val btnTODO = findViewById<Button>(R.id.btnToDO)
+
+        btnTODO.setOnClickListener { navigateToTODOApp() }
+
         btnSaludApp.setOnClickListener { navigateToSaludApp() }
         btnImcApp.setOnClickListener { navigateToImcApp() }
     }
+
+    private fun navigateToTODOApp() {
+
+    }
+
     private fun navigateToImcApp() {
         val intent = Intent(this, ImcCalculatorActivity::class.java)
         startActivity(intent)
