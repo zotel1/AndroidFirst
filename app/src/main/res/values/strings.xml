@@ -1,4 +1,6 @@
 <resources>
+
+    <!-- SaludAPP -->
     <string name="app_name">AndroidFirst</string>
     <string name="female">Mujer</string>
     <string name="male">Hombre</string>
@@ -9,6 +11,8 @@
     <string name="recalculate">Re-Calcular</string>
     <string name="result">Resultado!</string>
     <string name="error">Error!</string>
+
+    <!-- IMC App -->
 
     <string name="title_peso_bajo">Bajo Peso</string>
     <string name="description_peso_bajo">Estás por debajo de lo óptimo para tu peso y altura.</string>
@@ -22,5 +26,8 @@
     <string name="title_obesidad">Obesidad</string>
     <string name="description_obesidad">Estás MUY por encima de lo óptimo para tu peso y altura.</string>
 
+    <!-- TodoApp -->
+
+    <string name="todo_title">Bienvenido !</string>
 
 </resources>
