@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background_todo_app"
+    android:background="@color/todo_background_app"
     tools:context=".todoapp.TodoActivity">
 
     <TextView
@@ -21,5 +21,14 @@
         android:layout_marginHorizontal="32dp"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/todo_categories"
+        android:textAllCaps="true"
+        android:textColor="@color/todo_subtitle_text"
+        android:layout_marginHorizontal="32dp"
+
+        />
 
 </LinearLayout>

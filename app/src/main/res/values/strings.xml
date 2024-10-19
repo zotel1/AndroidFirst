@@ -29,5 +29,6 @@
     <!-- TodoApp -->
 
     <string name="todo_title">Bienvenido !</string>
+    <string name="todo_categories">Categorias:</string>
 
 </resources>
