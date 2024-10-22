@@ -12,6 +12,19 @@ class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun render(taskCategory: TaskCategory) {
 
-        tvCategoryName.text = "EJEMPLO"
+      //  tvCategoryName.text = "EJEMPLO"
+
+        when(taskCategory) {
+            TaskCategory.Personal -> {
+                tvCategoryName.text = "Personal"
+            }
+            TaskCategory.Business -> {
+                tvCategoryName.text = "Negocios"
+            }
+            TaskCategory.Other -> {
+                tvCategoryName.text = "Otros"
+            }
+        }
+
     }
 }
