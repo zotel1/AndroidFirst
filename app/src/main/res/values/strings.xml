@@ -30,5 +30,6 @@
 
     <string name="todo_title">Bienvenido !</string>
     <string name="todo_categories">Categorias:</string>
+    <string name="todo_tasks">TAREAS:</string>
 
 </resources>
