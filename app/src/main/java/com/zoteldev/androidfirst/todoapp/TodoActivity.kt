@@ -20,6 +20,9 @@ class TodoActivity : AppCompatActivity() {
     private lateinit var rvCategories: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
 
+    private lateinit var rvTask: RecyclerView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -37,6 +40,7 @@ class TodoActivity : AppCompatActivity() {
 
     private fun initComponent() {
         rvCategories = findViewById(R.id.rvCategories)
+        rvTask = findViewById(R.id.rvTask)
     }
 
     private fun initUI() {
