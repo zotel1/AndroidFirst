@@ -1,5 +1,6 @@
 package com.zoteldev.androidfirst.todoapp
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.zoteldev.androidfirst.R
 import com.zoteldev.androidfirst.todoapp.TaskCategory.*
 
@@ -30,6 +32,8 @@ class TodoActivity : AppCompatActivity() {
     private lateinit var rvTasks: RecyclerView
     private lateinit var tasksAdapter: TasksAdapter
 
+    private lateinit var fabAddTask: FloatingActionButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,12 +47,23 @@ class TodoActivity : AppCompatActivity() {
 
         initComponent()
         initUI()
+        initListeners()
+    }
 
+    private fun initListeners() {
+        fabAddTask.setOnClickListener { showDialog() }
+    }
+
+    private fun showDialog() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_task)
+        dialog.show()
     }
 
     private fun initComponent() {
         rvCategories = findViewById(R.id.rvCategories)
         rvTasks = findViewById(R.id.rvTask)
+        fabAddTask = findViewById(R.id.fabAddTask)
     }
 
     private fun initUI() {
