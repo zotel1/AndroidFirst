@@ -34,8 +34,10 @@
 
     <string name="todo_dialog_add_task">Añade la tarea:</string>
 
-    <string name="todo_rv_business">Negocios</string>
-    <string name="todo_rv_personal">Personal</string>
-    <string name="todo_rv_other">Otros</string>
+    <string name="todo_dialog_business">Negocios</string>
+    <string name="todo_dialog_personal">Personal</string>
+    <string name="todo_dialog_other">Otros</string>
+
+    <string name="todo_dialog_add_task_button">Crear Tarea</string>
 
 </resources>

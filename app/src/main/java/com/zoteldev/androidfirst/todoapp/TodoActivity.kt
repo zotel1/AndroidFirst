@@ -2,6 +2,10 @@ package com.zoteldev.androidfirst.todoapp
 
 import android.app.Dialog
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -57,6 +61,25 @@ class TodoActivity : AppCompatActivity() {
     private fun showDialog() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_task)
+
+        val btnAddTask: Button = dialog.findViewById(R.id.btnAddTask)
+        val etTask: EditText = dialog.findViewById(R.id.etTask)
+        val rgCategories: RadioGroup = dialog.findViewById(R.id.rgCategories)
+
+        btnAddTask.setOnClickListener {
+            val selectedId = rgCategories.checkedRadioButtonId
+            val selectedRadioButton:RadioButton = rgCategories.findViewById(selectedId)
+
+            val currentCategory:TaskCategory = when(selectedRadioButton.text) {
+                "Negocios" -> Business
+                "Personal" -> Personal
+                else -> Other
+            }
+
+            tasks.add(Task(etTask.text.toString(), currentCategory))
+            dialog.hide()
+        }
+
         dialog.show()
     }
 

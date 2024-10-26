@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/todo_background_app"
+    android:padding="16dp"
     >
 
     <EditText
@@ -26,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="@string/todo_rv_business"
+        android:text="@string/todo_dialog_business"
         android:buttonTint="@color/todo_business_category"
         />
 
@@ -36,7 +37,7 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:textColor="@color/white"
-            android:text="@string/todo_rv_personal"
+            android:text="@string/todo_dialog_personal"
             android:buttonTint="@color/todo_personal_category"
             />
 
@@ -45,10 +46,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="@string/todo_rv_other"
+            android:text="@string/todo_dialog_other"
             android:buttonTint="@color/todo_other_category"
             />
     </RadioGroup>
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/todo_accent"
+        android:text="@string/todo_dialog_add_task_button"
+        />
 
 
 </LinearLayout>
