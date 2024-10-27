@@ -67,17 +67,23 @@ class TodoActivity : AppCompatActivity() {
         val rgCategories: RadioGroup = dialog.findViewById(R.id.rgCategories)
 
         btnAddTask.setOnClickListener {
-            val selectedId = rgCategories.checkedRadioButtonId
-            val selectedRadioButton:RadioButton = rgCategories.findViewById(selectedId)
 
-            val currentCategory:TaskCategory = when(selectedRadioButton.text) {
-                "Negocios" -> Business
-                "Personal" -> Personal
-                else -> Other
+            val currentTask = etTask.text.toString()
+            if (currentTask.isNotEmpty()) {
+
+                val selectedId = rgCategories.checkedRadioButtonId
+                val selectedRadioButton: RadioButton = rgCategories.findViewById(selectedId)
+
+                val currentCategory: TaskCategory = when (selectedRadioButton.text) {
+                    getString(R.string.todo_dialog_business) -> Business
+                    getString(R.string.todo_dialog_personal) -> Personal
+                    else -> Other
+                }
+
+                tasks.add(Task(currentTask, currentCategory))
+                updateTasks()
+                dialog.hide()
             }
-
-            tasks.add(Task(etTask.text.toString(), currentCategory))
-            dialog.hide()
         }
 
         dialog.show()
@@ -101,4 +107,8 @@ class TodoActivity : AppCompatActivity() {
 
     }
 
+    private fun updateTasks() {
+
+        tasksAdapter.notifyDataSetChanged()
+    }
 }
