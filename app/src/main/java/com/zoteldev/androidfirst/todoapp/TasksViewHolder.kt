@@ -27,26 +27,18 @@ class TasksViewHolder (view: View) : RecyclerView.ViewHolder(view){
 
         cbTask.isChecked = task.isSelected
 
-        when(task.category){
-            TaskCategory.Business -> {
+        val color = when(task.category){
+            TaskCategory.Business -> R.color.todo_business_category
 
-                cbTask.buttonTintList = ColorStateList.valueOf(
-                    ContextCompat.getColor(cbTask.context, R.color.todo_business_category)
-                )
-            }
-            TaskCategory.Personal -> {
+            TaskCategory.Personal -> R.color.todo_personal_category
 
-                cbTask.buttonTintList = ColorStateList.valueOf(
-                    ContextCompat.getColor(cbTask.context, R.color.todo_personal_category)
-                )
-            }
-            TaskCategory.Other -> {
+            TaskCategory.Other -> R.color.todo_other_category
 
-                cbTask.buttonTintList = ColorStateList.valueOf(
-                    ContextCompat.getColor(cbTask.context, R.color.todo_other_category)
-                )
             }
-        }
+
+        cbTask.buttonTintList = ColorStateList.valueOf(
+            ContextCompat.getColor(cbTask.context, color)
+        )
 
 
     }
