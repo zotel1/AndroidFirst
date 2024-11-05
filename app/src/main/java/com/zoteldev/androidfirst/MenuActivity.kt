@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.zoteldev.androidfirst.firstapp.FirstAppActivity
 import com.zoteldev.androidfirst.imccalculator.ImcCalculatorActivity
+import com.zoteldev.androidfirst.superheroapp.SuperHeroListActivity
 import com.zoteldev.androidfirst.todoapp.TodoActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -26,11 +27,12 @@ class MenuActivity : AppCompatActivity() {
         val btnSaludApp = findViewById<Button>(R.id.btnSaludApp)
         val btnImcApp = findViewById<Button>(R.id.btnIMCApp)
         val btnTODO = findViewById<Button>(R.id.btnToDO)
+        val btnSuperHero = findViewById<Button>(R.id.btnSuperHero)
 
         btnTODO.setOnClickListener { navigateToTODOApp() }
-
         btnSaludApp.setOnClickListener { navigateToSaludApp() }
         btnImcApp.setOnClickListener { navigateToImcApp() }
+        btnSuperHero.setOnClickListener { navigateToSuperHeroApp() }
     }
 
     private fun navigateToTODOApp() {
@@ -45,6 +47,11 @@ class MenuActivity : AppCompatActivity() {
 
     private fun navigateToSaludApp() {
         val intent = Intent(this, FirstAppActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToSuperHeroApp() {
+        val intent = Intent(this, SuperHeroListActivity::class.java)
         startActivity(intent)
     }
 }
