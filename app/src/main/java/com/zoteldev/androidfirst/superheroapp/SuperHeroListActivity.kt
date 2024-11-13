@@ -18,23 +18,21 @@ class SuperHeroListActivity : AppCompatActivity() {
         binding = ActivitySuperHeroListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initUI()
-
-
     }
 
-
     private fun initUI(){
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener
-        {
-
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                TODO("Not yet implemented")
+                searchByName(query.orEmpty())
+                return false
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                TODO("Not yet implemented")
-            }
+            override fun onQueryTextChange(newText: String?) = false
 
         })
+    }
+
+    private fun searchByName(query: String) {
+
     }
 }
