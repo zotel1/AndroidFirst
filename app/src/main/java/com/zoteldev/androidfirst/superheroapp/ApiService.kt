@@ -7,5 +7,5 @@ import retrofit2.http.Path
 interface ApiService {
 
     @GET("/api/acces-token/search/{name}")
-    suspend fun getSuperheroes(@Path("name") superHeroName :String):Response<JSON>
+    suspend fun getSuperheroes(@Path("name") superHeroName :String):Response<SuperHeroDataResponse>
 }
