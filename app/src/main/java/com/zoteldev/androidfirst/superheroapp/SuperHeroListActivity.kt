@@ -1,6 +1,7 @@
 package com.zoteldev.androidfirst.superheroapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -8,6 +9,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.zoteldev.androidfirst.R
 import com.zoteldev.androidfirst.databinding.ActivitySuperHeroListBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -37,6 +41,14 @@ class SuperHeroListActivity : AppCompatActivity() {
     }
 
     private fun searchByName(query: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val myResponse = retrofit.create(ApiService::class.java).getSuperheroes(query)
+            if(myResponse.isSuccessful) {
+                Log.i("zoteldevs", "funciona :D")
+            } else {
+                Log.i("zoteldevs", "No funciona :/ ")
+            }
+        }
 
     }
 
