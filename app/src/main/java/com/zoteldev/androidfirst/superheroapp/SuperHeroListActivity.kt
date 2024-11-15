@@ -45,6 +45,11 @@ class SuperHeroListActivity : AppCompatActivity() {
             val myResponse = retrofit.create(ApiService::class.java).getSuperheroes(query)
             if(myResponse.isSuccessful) {
                 Log.i("zoteldevs", "funciona :D")
+                val response:SuperHeroDataResponse? = myResponse.body()
+                if (response != null) {
+                    Log.i("herodevs", response.toString())
+                }
+
             } else {
                 Log.i("zoteldevs", "No funciona :/ ")
             }
