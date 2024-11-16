@@ -41,6 +41,7 @@ class SuperHeroListActivity : AppCompatActivity() {
     }
 
     private fun searchByName(query: String) {
+        binding.progressBar.invisible = true
         CoroutineScope(Dispatchers.IO).launch {
             val myResponse = retrofit.create(ApiService::class.java).getSuperheroes(query)
             if(myResponse.isSuccessful) {
@@ -48,6 +49,7 @@ class SuperHeroListActivity : AppCompatActivity() {
                 val response:SuperHeroDataResponse? = myResponse.body()
                 if (response != null) {
                     Log.i("herodevs", response.toString())
+                    binding.progressBar.invisible = false
                 }
 
             } else {
