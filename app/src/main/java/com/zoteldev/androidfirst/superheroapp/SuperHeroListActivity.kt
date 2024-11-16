@@ -49,7 +49,9 @@ class SuperHeroListActivity : AppCompatActivity() {
                 val response:SuperHeroDataResponse? = myResponse.body()
                 if (response != null) {
                     Log.i("herodevs", response.toString())
+                    runOnUiThread {
                     binding.progressBar.invisible = false
+                }
                 }
 
             } else {
