@@ -10,4 +10,11 @@ class SuperheroAdapter (var superHeroList: List<SuperHeroItemResponse> = emptyLi
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroViewHolder {
 
         }
+    override fun onBindViewHolder(holder: SuperHeroViewHolder, position: Int) {
+
+    }
+
+    override fun getItemCount(): Int {
+
+    }
     }
