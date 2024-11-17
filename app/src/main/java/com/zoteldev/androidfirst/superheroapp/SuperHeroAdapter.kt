@@ -11,10 +11,8 @@ class SuperheroAdapter (var superHeroList: List<SuperHeroItemResponse> = emptyLi
 
         }
     override fun onBindViewHolder(holder: SuperHeroViewHolder, position: Int) {
-
+viewholder.bind(superheroList[position])
     }
 
-    override fun getItemCount(): Int {
-
-    }
+    override fun getItemCount() = superheroList.size
     }
