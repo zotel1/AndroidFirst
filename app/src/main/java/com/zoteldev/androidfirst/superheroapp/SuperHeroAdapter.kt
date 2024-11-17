@@ -1,5 +1,13 @@
 package com.zoteldev.androidfirst.superheroapp
 
-import io.netty.util.Recycler
+import android.view.ViewGroup
+import androidx.recyclerView.widget.RecyclerView
 
-class SuperHeroAdapter (var superHeroList: List<SuperHeroItemResponse> = emptyList()) : RecyclerView.Adapter<SuperHeroViewHolder>
+
+class SuperheroAdapter (var superHeroList: List<SuperHeroItemResponse> = emptyList()) :
+    RecyclerView.Adapter<SuperHeroViewHolder>() {
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroViewHolder {
+
+        }
+    }
