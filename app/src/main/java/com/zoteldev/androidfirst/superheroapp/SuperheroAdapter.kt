@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zoteldev.androidfirst.R
 
 
-class SuperheroAdapter(var superheroList: List<SuperheroItemResponse> = emptyList()) :
+class SuperheroAdapter(
+    var superheroList: List<SuperheroItemResponse> = emptyList()) :
     RecyclerView.Adapter<SuperheroViewHolder>() {
 
-        fun updateList(list: List<SuperheroItemResponse>) {
+        fun updateList(list: List<superheroItemResponse>) {
 
             superheroList = list
             notifyDataSetChanged()
