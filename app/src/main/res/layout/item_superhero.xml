@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     app:cardCornerRadius="22dp"
-    app:cardElevation="8dp"
-    tools:cardBackgroundColor="@color/teal_700">
+    app:cardElevation="8dp">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -15,12 +14,27 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+        
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:background="@color/superhero_item_name"
+            >
 
-        <TextView
-            android:id="@+id/tvSuperheroName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvSuperheroName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                tools:text="PERSONAJE"
+                android:layout_gravity="center"
+                />
+
+        </FrameLayout>
+
+
     </FrameLayout>
 
 
