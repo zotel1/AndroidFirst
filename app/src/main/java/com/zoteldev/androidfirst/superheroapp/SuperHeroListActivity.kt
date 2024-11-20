@@ -1,16 +1,16 @@
 package com.zoteldev.androidfirst.superheroapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.zoteldev.androidfirst.R
 import com.zoteldev.androidfirst.databinding.ActivitySuperHeroListBinding
+import com.zoteldev.androidfirst.superheroapp.DetailSuperHeroActivity.Companion.EXTRA_ID
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -77,7 +77,12 @@ class SuperHeroListActivity : AppCompatActivity() {
             .baseUrl("https://superheroapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
 
+    private fun navigateToDetail(id:String) {
+        val intent = Intent(this, DetailSuperHeroActivity::class.java)
+        intent.putExtra(EXTRA_ID, id)
+        startActivity(intent)
 
     }
 
