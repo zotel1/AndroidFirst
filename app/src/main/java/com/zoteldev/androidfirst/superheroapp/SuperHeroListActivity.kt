@@ -59,6 +59,7 @@ class SuperHeroListActivity : AppCompatActivity() {
                 if (response != null) {
                     Log.i("herodevs", response.toString())
                     runOnUiThread {
+                        adapter.updateList(response.superheroes)
                     binding.progressBar.isVisible = false
                 }
                 }

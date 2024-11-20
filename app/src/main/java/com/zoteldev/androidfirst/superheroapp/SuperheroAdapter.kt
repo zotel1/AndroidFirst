@@ -9,7 +9,11 @@ import com.zoteldev.androidfirst.R
 class SuperheroAdapter(var superheroList: List<SuperheroItemResponse> = emptyList()) :
     RecyclerView.Adapter<SuperheroViewHolder>() {
 
-        fun updateList(superHeroList: List<SuperheroItemResponse>)
+        fun updateList(list: List<SuperheroItemResponse>) {
+
+            superheroList = list
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroViewHolder {
         return SuperheroViewHolder(
