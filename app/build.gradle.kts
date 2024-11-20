@@ -52,6 +52,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // Picasso
+    implementation(libs.picasso)
 
     // RETROFIT
     implementation(libs.retrofit)
