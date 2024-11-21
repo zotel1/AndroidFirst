@@ -7,22 +7,25 @@ import com.zoteldev.androidfirst.R
 
 
 class SuperheroAdapter(
-    var superheroList: List<SuperheroItemResponse> = emptyList()) :
+    var superheroList: List<SuperheroItemResponse> = emptyList(),
+    private val onItemSelected: (String) -> Unit
+) :
     RecyclerView.Adapter<SuperheroViewHolder>() {
 
-        fun updateList(list: List<superheroItemResponse>) {
+    fun updateList(list: List<SuperheroItemResponse>) {
 
-            superheroList = list
-            notifyDataSetChanged()
-        }
+        superheroList = list
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroViewHolder {
         return SuperheroViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_superhero, parent, false))
+            LayoutInflater.from(parent.context).inflate(R.layout.item_superhero, parent, false)
+        )
     }
 
-    override fun onBindViewHolder(holder: SuperheroViewHolder, position: Int) {
-        viewholder.bind(superheroList[position])
+    override fun onBindViewHolder(viewholder: SuperheroViewHolder, position: Int) {
+        viewholder.bind(superheroList[position], onItemSelected)
     }
 
     override fun getItemCount() = superheroList.size
