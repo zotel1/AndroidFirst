@@ -40,4 +40,17 @@
 
     <string name="todo_dialog_add_task_button">Crear Tarea</string>
 
+    <!-- SuperheroApp-->
+    <string name="superhero_stat_intelligence">intelligence</string>
+    <string name="superhero_stat_strength">strength</string>
+
+    <string name="superhero_stat_speed">speed</string>
+
+    <string name="superhero_stat_durability">durability</string>
+
+    <string name="superhero_stat_power">ower</string>
+
+    <string name="superhero_stat_combat">combat</string>
+
+
 </resources>
