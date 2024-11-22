@@ -42,6 +42,14 @@ class DetailSuperHeroActivity : AppCompatActivity() {
     private fun createUi(superhero: SuperHeroDetailResponse) {
         Picasso.get().load(superhero.image.url).into(binding.ivSuperhero)
         binding.tvSuperheroName.text = superhero.name
+        prepareStats((superhero.powerstats))
+    }
+
+    private fun prepareStats(powerstats: PowerStatsResponse) {
+
+        val params = binding.viewCombat.layoutParams
+        params.height = powerstats.combat.toInt()
+        binding.viewCombat.layoutParams = params
     }
 
     private fun getRetrofit(): Retrofit {
