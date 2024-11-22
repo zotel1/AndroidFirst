@@ -1,6 +1,7 @@
 package com.zoteldev.androidfirst.superheroapp
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 import com.zoteldev.androidfirst.R
@@ -46,10 +47,18 @@ class DetailSuperHeroActivity : AppCompatActivity() {
     }
 
     private fun prepareStats(powerstats: PowerStatsResponse) {
+        updateHeight(binding.viewCombat, powerstats.combat.toInt())
+        updateHeight(binding.viewDurability, powerstats.durability.toInt())
+        updateHeight(binding.viewSpeed, powerstats.speed.toInt())
+        updateHeight(binding.viewStrength, powerstats.strength.toInt())
+        updateHeight(binding.viewIntelligence, powerstats.intelligence.toInt())
+        updateHeight(binding.viewPower, powerstats.power.toInt())
+    }
 
-        val params = binding.viewCombat.layoutParams
-        params.height = powerstats.combat.toInt()
-        binding.viewCombat.layoutParams = params
+    private fun updateHeight(view: View, stat: Int) {
+        val params = view.layoutParams
+        params.height = stat
+        view.layoutParams = params
     }
 
     private fun getRetrofit(): Retrofit {
