@@ -34,4 +34,11 @@
         android:layout_height="wrap_content"
         android:text="Super hero App"
         />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        />
 </LinearLayout>
