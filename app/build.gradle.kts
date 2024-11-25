@@ -55,6 +55,10 @@ dependencies {
     // Picasso
     implementation(libs.picasso)
 
+    // DataStore
+    implementation(libs.datastore.preferences)
+
+
     // RETROFIT
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
