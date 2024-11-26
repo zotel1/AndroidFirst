@@ -13,6 +13,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.zoteldev.androidfirst.databinding.ActivitySettingsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
@@ -83,8 +84,8 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     // Arrancamos con los flow
-    private fun getSettings() {
-        dataStore.data.map { preferences ->
+    private fun getSettings(): Flow<Boolean?> {
+        return dataStore.data.map { preferences ->
             preferences[intPreferencesKey(VOLUME_LVL)]
             preferences[booleanPreferencesKey(KEY_BLUETOOTH)]
         }
