@@ -84,11 +84,14 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     // Arrancamos con los flow
-    private fun getSettings(): Flow<Boolean?> {
+    private fun getSettings(): Flow<SettingsModel?> {
         return dataStore.data.map { preferences ->
-            preferences[intPreferencesKey(VOLUME_LVL)]
-            preferences[booleanPreferencesKey(KEY_BLUETOOTH)]
-        }
+            SettingsModel (
+            volume = preferences[intPreferencesKey(VOLUME_LVL)] ?: 50,
+            bluetooth = preferences[booleanPreferencesKey(KEY_BLUETOOTH)] ?: true,
+                darkMode = preferences[booleanPreferencesKey(KEY_DARK_MODE)] ?: false,
+                vibration = preferences[booleanPreferencesKey(KEY_VIBRATION)] ?: true
+            )}
     }
 
     }
