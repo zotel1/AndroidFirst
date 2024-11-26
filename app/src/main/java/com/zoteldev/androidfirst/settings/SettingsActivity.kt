@@ -86,6 +86,7 @@ class SettingsActivity : AppCompatActivity() {
     private fun getSettings() {
         dataStore.data.map { preferences ->
             preferences[intPreferencesKey(VOLUME_LVL)]
+            preferences[booleanPreferencesKey(KEY_BLUETOOTH)]
         }
     }
 
