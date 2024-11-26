@@ -8,7 +8,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:text="Escribe tu nombre"
+        android:text="@string/saludApp_text_input_name"
         android:textSize="35sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/purple_200"
-        android:text="Pulsame"
+        android:text="@string/saludApp_pulsar"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

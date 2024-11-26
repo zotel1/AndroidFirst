@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/male"
+                android:text="@string/saludApp_male"
                 android:textAllCaps="true"
                 android:textColor="@color/title_text" />
 
@@ -65,13 +65,15 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/ic_female"
-                android:tint="@color/white"></ImageView>
+                android:tint="@color/white">
+
+            </ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/female"
+                android:text="@string/saludApp_female"
                 android:textAllCaps="true"
                 android:textColor="@color/title_text">
 
@@ -101,7 +103,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/height"
+                android:text="@string/saludApp_height"
                 android:textAllCaps="true"
                 android:textColor="@color/title_text">
 
@@ -156,7 +158,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/weight"
+                android:text="@string/saludApp_weight"
                 android:textAllCaps="true"
                 android:textColor="@color/title_text" />
 
@@ -217,7 +219,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/age"
+                android:text="@string/saludApp_age"
                 android:textAllCaps="true"
                 android:textColor="@color/title_text" />
 
@@ -261,7 +263,7 @@
         android:id="@+id/btnCalculate"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:text="@string/calculate"
+        android:text="@string/saludApp_calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

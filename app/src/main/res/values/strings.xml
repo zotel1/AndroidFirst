@@ -1,16 +1,18 @@
 <resources>
 
     <!-- SaludAPP -->
-    <string name="app_name">AndroidFirst</string>
-    <string name="female">Mujer</string>
-    <string name="male">Hombre</string>
-    <string name="height">Altura</string>
-    <string name="weight">Peso</string>
-    <string name="age">Edad</string>
-    <string name="calculate">Calcular</string>
-    <string name="recalculate">Re-Calcular</string>
-    <string name="result">Resultado!</string>
-    <string name="error">Error!</string>
+    <string name="saludApp_name">AndroidFirst</string>
+    <string name="saludApp_female">Mujer</string>
+    <string name="saludApp_male">Hombre</string>
+    <string name="saludApp_height">Altura</string>
+    <string name="saludApp_weight">Peso</string>
+    <string name="saludApp_age">Edad</string>
+    <string name="saludApp_calculate">Calcular</string>
+    <string name="saludApp_recalculate">Re-Calcular</string>
+    <string name="saludApp_result">Resultado!</string>
+    <string name="saludApp_error">Error!</string>
+    <string name="saludApp_text_input_name">Escribe tu nombre</string>
+    <string name="saludApp_pulsar">Pulsame</string>
 
     <!-- IMC App -->
 
