@@ -21,6 +21,9 @@ class SettingsActivity : AppCompatActivity() {
 
     companion object {
         const val VOLUME_LVL = "volume_lvl"
+        const val KEY_BLUETOOTH = "key_bluetooth"
+        const val KEY_VIBRATION = "key_vibration"
+        const val KEY_DARK_MODE = "key_dark_mode"
     }
 
     private lateinit var binding: ActivitySettingsBinding
@@ -34,12 +37,36 @@ class SettingsActivity : AppCompatActivity() {
         }
 
     private fun initUI() {
+
+        // Guardamos el valor del rangeSlider de volumen
         binding.rsVolume.addOnChangeListener { _, value, _ ->
             Log.i("Cris", "el valor es $value")
             CoroutineScope(Dispatchers.IO).launch {
                 saveVolume(value.toInt())
             }
         }
+
+        // Arrancamos llamando al switch del bluetooth
+        binding.switchBluetooth.setOnCheckedChangeListener { _, value ->
+            CoroutineScope(Dispatchers.IO).launch {
+                saveOptions(KEY_BLUETOOTH, value)
+            }
+        }
+
+        //Llamamos al swwitch de la vibracion
+        binding.switchVibration.setOnCheckedChangeListener { _, value ->
+            CoroutineScope(Dispatchers.IO).launch {
+                saveOptions(KEY_VIBRATION, value)
+            }
+        }
+
+        // Llamamos al switch del dark mode
+        binding.switchDarkMode.setOnCheckedChangeListener { _, value ->
+            CoroutineScope(Dispatchers.IO).launch {
+                saveOptions(KEY_DARK_MODE, value)
+            }
+        }
+
     }
 
     private suspend fun saveVolume(value: Int) {
