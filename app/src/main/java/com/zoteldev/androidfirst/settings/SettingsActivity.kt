@@ -34,6 +34,21 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        CoroutineScope(Dispatchers.IO).launch {
+            getSettings().collect{
+                // datos SettingsModel()
+                settingsModel ->
+                if (settingsModel != null) {
+                    runOnUiThread {
+                        binding.switchVibration.isChecked = settingsModel.vibration
+                        binding.switchBluetooth.isChecked = settingsModel.bluetooth
+                        binding.switchDarkMode.isChecked = settingsModel.darkMode
+                        binding.rsVolume.setValues(settingsModel.volume.toFloat())
+                    }
+                }
+            }
+        }
+
         initUI()
 
         }
