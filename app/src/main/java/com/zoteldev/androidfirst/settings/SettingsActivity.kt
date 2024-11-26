@@ -13,6 +13,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.zoteldev.androidfirst.databinding.ActivitySettingsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
@@ -78,6 +79,13 @@ class SettingsActivity : AppCompatActivity() {
     private suspend fun saveOptions(key: String, value: Boolean) {
         dataStore.edit { preferences ->
             preferences[booleanPreferencesKey(key)] = value
+        }
+    }
+
+    // Arrancamos con los flow
+    private fun getSettings() {
+        dataStore.data.map { preferences ->
+            preferences[intPreferencesKey(VOLUME_LVL)]
         }
     }
 
