@@ -14,6 +14,7 @@ import com.zoteldev.androidfirst.databinding.ActivitySettingsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
@@ -29,13 +30,14 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivitySettingsBinding
+    private var firstTime: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         CoroutineScope(Dispatchers.IO).launch {
-            getSettings().collect{
+            getSettings().filter { firstTime }.collect{
                 // datos SettingsModel()
                 settingsModel ->
                 if (settingsModel != null) {
@@ -44,6 +46,7 @@ class SettingsActivity : AppCompatActivity() {
                         binding.switchBluetooth.isChecked = settingsModel.bluetooth
                         binding.switchDarkMode.isChecked = settingsModel.darkMode
                         binding.rsVolume.setValues(settingsModel.volume.toFloat())
+                        firstTime = !firstTime
                     }
                 }
             }
